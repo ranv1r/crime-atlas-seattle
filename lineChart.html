@@ -8,6 +8,7 @@
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <link rel="stylesheet" href="css/map1.css"/>
         <style>
         </style>
@@ -15,17 +16,10 @@
 </head>
 
 <body>
-    <div id="map"></div>
-    <!-- <div class='map-overlay' id='features'>
-        <h2>COVID-19 Rates by County in USA</h2>
-        <div id='text-description'>
-            <p>Hover over a county!</p>
-        </div>
-    </div> -->
-    <!-- <div class='map-overlay' id='legend'></div> -->
-    <canvas id="myChart" width="400" height="400"></canvas>
-    <script src="js/line1.js"></script>
-
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script type="module" src="js/line1.js"></script>
 </body>
 
 </html>
