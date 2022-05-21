@@ -1,91 +1,91 @@
-// // import "assets/crime4.geojson"
-// // import { Chart, registerables } from 'chart.js';
-// // Chart.register(...registerables);
+// // // import "assets/crime4.geojson"
+// // // import { Chart, registerables } from 'chart.js';
+// // // Chart.register(...registerables);
 
-// @todo create some way using github lsv to ensure that as the crime database gets updated, we continue to have good data
+// // @todo create some way using github lsv to ensure that as the crime database gets updated, we continue to have good data
 
-const hm = new Map();
+// const hm = new Map();
 
-function readJson(cb, i) {
+// function readJson(cb, i) {
 
-    fetch("http://127.0.0.1:5500/assets/crime" + i + ".geojson")
-    .then((response) => {
-        if (!response.ok) {
-            throw new Error("HTTP error " + response.status);
-        }
-        return response.json();
-    })
-    .then((json) => {
-        cb(json,i);
-    });
-}
+//     fetch("https://ranv1r.github.io/crime-atlas-seattle/assets/crime" + i + ".geojson")
+//     .then((response) => {
+//         if (!response.ok) {
+//             throw new Error("HTTP error " + response.status);
+//         }
+//         return response.json();
+//     })
+//     .then((json) => {
+//         cb(json,i);
+//     });
+// }
 
-function construct(json, i) {
-    // for (f of json.features) {
-    //     mcpp = f.properties.mcpp;
-    //     neighborhoods[mcpp] = neighborhoods[mcpp] + 1 || 1;
-    // }
+// function construct(json, i) {
+//     // for (f of json.features) {
+//     //     mcpp = f.properties.mcpp;
+//     //     neighborhoods[mcpp] = neighborhoods[mcpp] + 1 || 1;
+//     // }
     
-    // // Create items array
-    // var items = Object.keys(neighborhoods).map(function(key) {
-    //     return [key, neighborhoods[key]];
-    // });
+//     // // Create items array
+//     // var items = Object.keys(neighborhoods).map(function(key) {
+//     //     return [key, neighborhoods[key]];
+//     // });
     
-    // // Sort the array based on the second element
-    // items.sort(function(first, second) {
-    //     return second[1] - first[1];
-    // });
-    // m = 15
-    // // Create a new array with only the first 5 items
-    // let condensed = items.slice(0, m)
+//     // // Sort the array based on the second element
+//     // items.sort(function(first, second) {
+//     //     return second[1] - first[1];
+//     // });
+//     // m = 15
+//     // // Create a new array with only the first 5 items
+//     // let condensed = items.slice(0, m)
     
-    // console.log(items.slice(m))
+//     // console.log(items.slice(m))
     
-    // others = 0
+//     // others = 0
     
-    // for (i of items.slice(m)){
-    //     others += i[1]
-    // }
-    // condensed.push(["others", others])
-    // console.log(condensed)
+//     // for (i of items.slice(m)){
+//     //     others += i[1]
+//     // }
+//     // condensed.push(["others", others])
+//     // console.log(condensed)
     
-    console.log("hour " + i +": " + json.features.length);
+//     console.log("hour " + i +": " + json.features.length);
 
-    hm.set(i, json.features.length)
+//     hm.set(i, json.features.length)
     
-    // const data = {
-    //     labels: condensed.map(function (i) {return i[0]}),
-    //     datasets: [
-    //         {
-    //             label: "My First Dataset",
-    //             data: condensed.map(function (i) {return i[1]}),
-    //             backgroundColor: [
-    //                 "rgb(255, 99, 132)",
-    //                 "rgb(54, 162, 235)",
-    //                 "rgb(255, 205, 86)",
-    //             ],
-    //             hoverOffset: 4,
-    //         },
-    //     ],
-    // };
+//     // const data = {
+//     //     labels: condensed.map(function (i) {return i[0]}),
+//     //     datasets: [
+//     //         {
+//     //             label: "My First Dataset",
+//     //             data: condensed.map(function (i) {return i[1]}),
+//     //             backgroundColor: [
+//     //                 "rgb(255, 99, 132)",
+//     //                 "rgb(54, 162, 235)",
+//     //                 "rgb(255, 205, 86)",
+//     //             ],
+//     //             hoverOffset: 4,
+//     //         },
+//     //     ],
+//     // };
     
-    // const ctx = document.getElementById("myChart").getContext("2d");
-    // const myChart = new Chart(ctx, {
-    //     type: "doughnut",
-    //     data: data,
-    // });
-}
+//     // const ctx = document.getElementById("myChart").getContext("2d");
+//     // const myChart = new Chart(ctx, {
+//     //     type: "doughnut",
+//     //     data: data,
+//     // });
+// }
 
 
-let indexes = [];
+// let indexes = [];
 
-for(let i = 0; i < 24; i++){
-    indexes.push(i);
-}
+// for(let i = 0; i < 24; i++){
+//     indexes.push(i);
+// }
 
-indexes.forEach(index => { 
-    readJson(construct, index);
-});
+// indexes.forEach(index => { 
+//     readJson(construct, index);
+// });
 
 // console.log(hm);
 
