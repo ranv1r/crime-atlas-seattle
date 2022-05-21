@@ -1,4 +1,4 @@
-neighborhoods = {};
+offenses = {};
 
 function readJson(cb) {
   fetch("https://ranv1r.github.io/crime-atlas-seattle/assets/crime4.geojson")
@@ -15,13 +15,13 @@ function readJson(cb) {
 
 function construct(json) {
   for (f of json.features) {
-    mcpp = f.properties.mcpp;
-    neighborhoods[mcpp] = neighborhoods[mcpp] + 1 || 1;
+    offense_type = f.properties.offense_type;
+    offenses[offense_type] = offenses[offense_type] + 1 || 1;
   }
 
   // Create items array for example [["CAPITOL HILL", 1000], ["QUEEN ANNE", 3000]]
-  var items = Object.keys(neighborhoods).map(function (key) {
-    return [key, neighborhoods[key]];
+  var items = Object.keys(offenses).map(function (key) {
+    return [key, offenses[key]];
   });
 
   // Sort the array based on the second element in descending order of neighbordhood crime frequency
