@@ -1,4 +1,4 @@
-offenses = {};
+offenses = { };
 
 function readJson(cb) {
   fetch("https://ranv1r.github.io/crime-atlas-seattle/assets/crime4.geojson")
