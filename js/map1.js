@@ -155,7 +155,7 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-four",
+      id: "crimes-circle-layer-4",
       type:"circle",
       source:"crimes_4",
       minzoom:14,
@@ -175,13 +175,13 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-zero",
+      id: "crimes-circle-layer-0",
       type:"circle",
       source:"crimes_0",
       minzoom:14,
       'layout': {
-        // Make the layer hidden, and subject to change.
-        'visibility': 'hidden'
+        // Make the layer'none, and subject to change.
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -195,12 +195,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-one",
+      id: "crimes-circle-layer-1",
       type:"circle",
       source:"crimes_1",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -214,12 +214,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-two",
+      id: "crimes-circle-layer-2",
       type:"circle",
       source:"crimes_2",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -233,13 +233,13 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-three",
+      id: "crimes-circle-layer-3",
       type:"circle",
       source:"crimes_3",
       minzoom:14,
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -253,12 +253,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-five",
+      id: "crimes-circle-layer-5",
       type:"circle",
       source:"crimes_5",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -272,12 +272,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-six",
+      id: "crimes-circle-layer-6",
       type:"circle",
       source:"crimes_6",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -291,12 +291,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-seven",
+      id: "crimes-circle-layer-7",
       type:"circle",
       source:"crimes_7",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -310,12 +310,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-eight",
+      id: "crimes-circle-layer-8",
       type:"circle",
       source:"crimes_8",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -329,12 +329,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-nine",
+      id: "crimes-circle-layer-9",
       type:"circle",
       source:"crimes_9",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -348,12 +348,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-ten",
+      id: "crimes-circle-layer-10",
       type:"circle",
       source:"crimes_10",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -367,12 +367,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-eleven",
+      id: "crimes-circle-layer-11",
       type:"circle",
       source:"crimes_11",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -386,12 +386,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-twelve",
+      id: "crimes-circle-layer-12",
       type:"circle",
       source:"crimes_12",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -405,12 +405,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-thirteen",
+      id: "crimes-circle-layer-13",
       type:"circle",
       source:"crimes_13",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -424,12 +424,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-fourteen",
+      id: "crimes-circle-layer-14",
       type:"circle",
       source:"crimes_14",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -443,12 +443,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-fifteen",
+      id: "crimes-circle-layer-15",
       type:"circle",
       source:"crimes_15",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -462,12 +462,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-sixteen",
+      id: "crimes-circle-layer-16",
       type:"circle",
       source:"crimes_16",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -481,12 +481,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-seventeen",
+      id: "crimes-circle-layer-17",
       type:"circle",
       source:"crimes_17",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -500,12 +500,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-eighteen",
+      id: "crimes-circle-layer-18",
       type:"circle",
       source:"crimes_18",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -519,12 +519,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-nineteen",
+      id: "crimes-circle-layer-19",
       type:"circle",
       source:"crimes_19",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -538,12 +538,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-twenty",
+      id: "crimes-circle-layer-20",
       type:"circle",
       source:"crimes_20",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -557,12 +557,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-twenty-one",
+      id: "crimes-circle-layer-21",
       type:"circle",
       source:"crimes_21",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -576,12 +576,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-twenty-two",
+      id: "crimes-circle-layer-22",
       type:"circle",
       source:"crimes_22",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -595,12 +595,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-circle-layer-twenty-three",
+      id: "crimes-circle-layer-23",
       type:"circle",
       source:"crimes_23",
       minzoom:14,
       'layout': {
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
@@ -614,7 +614,7 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-four",
+      id: "crimes-heat-layer-4",
       type: "heatmap",
       source: "crimes_4",
       'layout': {
@@ -652,12 +652,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-zero",
+      id: "crimes-heat-layer-0",
       type: "heatmap",
       source: "crimes_0",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -690,12 +690,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-one",
+      id: "crimes-heat-layer-1",
       type: "heatmap",
       source: "crimes_1",
       'layout': {
-        // Make the layer hidden.
-        'visibility': 'hidden'
+        // Make the layer'none.
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -728,12 +728,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-two",
+      id: "crimes-heat-layer-2",
       type: "heatmap",
       source: "crimes_2",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -766,12 +766,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-three",
+      id: "crimes-heat-layer-3",
       type: "heatmap",
       source: "crimes_3",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -804,12 +804,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-five",
+      id: "crimes-heat-layer-5",
       type: "heatmap",
       source: "crimes_5",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -842,12 +842,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-six",
+      id: "crimes-heat-layer-6",
       type: "heatmap",
       source: "crimes_6",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -880,12 +880,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-seven",
+      id: "crimes-heat-layer-7",
       type: "heatmap",
       source: "crimes_7",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -918,12 +918,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-eight",
+      id: "crimes-heat-layer-8",
       type: "heatmap",
       source: "crimes_8",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -956,12 +956,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-nine",
+      id: "crimes-heat-layer-9",
       type: "heatmap",
       source: "crimes_9",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -994,12 +994,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-ten",
+      id: "crimes-heat-layer-10",
       type: "heatmap",
       source: "crimes_10",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1032,12 +1032,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-eleven",
+      id: "crimes-heat-layer-11",
       type: "heatmap",
       source: "crimes_11",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1070,12 +1070,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-twelve",
+      id: "crimes-heat-layer-12",
       type: "heatmap",
       source: "crimes_12",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1108,12 +1108,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-thirteen",
+      id: "crimes-heat-layer-13",
       type: "heatmap",
       source: "crimes_13",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1146,12 +1146,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-fourteen",
+      id: "crimes-heat-layer-14",
       type: "heatmap",
       source: "crimes_14",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1184,12 +1184,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-fifteen",
+      id: "crimes-heat-layer-15",
       type: "heatmap",
       source: "crimes_15",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1222,12 +1222,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-sixteen",
+      id: "crimes-heat-layer-16",
       type: "heatmap",
       source: "crimes_16",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1260,12 +1260,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-seventeen",
+      id: "crimes-heat-layer-17",
       type: "heatmap",
       source: "crimes_17",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1298,12 +1298,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-eighteen",
+      id: "crimes-heat-layer-18",
       type: "heatmap",
       source: "crimes_18",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1336,12 +1336,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-nineteen",
+      id: "crimes-heat-layer-19",
       type: "heatmap",
       source: "crimes_19",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1374,12 +1374,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-twenty",
+      id: "crimes-heat-layer-20",
       type: "heatmap",
       source: "crimes_20",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1412,12 +1412,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-twenty-one",
+      id: "crimes-heat-layer-21",
       type: "heatmap",
       source: "crimes_21",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1450,12 +1450,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-twenty-two",
+      id: "crimes-heat-layer-22",
       type: "heatmap",
       source: "crimes_22",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1488,12 +1488,12 @@ map.on("load", function loadingData() {
 
   map.addLayer(
     {
-      id: "crimes-heat-layer-twenty-three",
+      id: "crimes-heat-layer-23",
       type: "heatmap",
       source: "crimes_23",
       'layout': {
         // Make the layer visible by default.
-        'visibility': 'hidden'
+        'visibility': 'none'
         },
       minzoom:10,
       maxzoom: 15,
@@ -1523,6 +1523,26 @@ map.on("load", function loadingData() {
     },
     "waterway-label"
   );
+});
+
+  map.on('idle',() => {
+  document.getElementById('slider').addEventListener('input',(event) => {
+
+    const hour = parseInt(event.target.value);
+    let str_hour=hour.toString();
+    let heatmap_id = 'crimes-heat-layer-'.concat(str_hour);
+    let circlemap_id ='crimes-circle-layer-'.concat(str_hour);
+    for (let i =0; i<24; i++) {
+      if (i==hour) {map.setLayoutProperty(heatmap_id, 'visibility', 'visible');
+                    map.setLayoutProperty(circlemap_id,'visibility','visible');
+                   } else {let string_hour=i.toString();
+                           let hmap_id='crimes-heat-layer-'.concat(string_hour);
+                           let cmap_id='crimes-circle-layer-'.concat(string_hour);
+                           map.setLayoutProperty(hmap_id, 'visibility', 'none');
+                           map.setLayoutProperty(cmap_id,'visibility','none')}
+                          }
+    document.getElementById('active-hour').innerText = hour;
+  })
 });
 
 // legend

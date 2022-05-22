@@ -9,6 +9,17 @@
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
         <link rel="stylesheet" href="css/map1.css"/>
+        <style>
+            #console {
+                position: absolute;
+                margin: 10px;
+                width: 240px;
+                background-color: white;
+                padding: 10px 20px;
+
+            }
+        </style>
+        
 
 
 </head>
@@ -22,6 +33,10 @@
         </div>
     </div> -->
     <div class='map-overlay' id='legend'></div>
+    <div id='console'>
+        <h2>Hour: <label id='active-hour'>4AM</label></h2>
+        <input id='slider' class='row' type='range' min='0' max='23' step='1' value='4' />
+      </div>
     <script src="js/map1.js"></script>
 
 </body>
