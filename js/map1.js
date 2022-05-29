@@ -32,6 +32,7 @@ const colors = [
   'rgb(0,68,27)',
 ];
 
+
 const opacity_circle = {stops:[
   [14,0],
   [15,1]
@@ -50,13 +51,8 @@ const radius_heatmap = {
 
 const intensity_heatmap = {
   stops:[
-<<<<<<< Updated upstream
-    [11,1],
-    [15,5]
-=======
     [11,0.03],
     [15,0.2]
->>>>>>> Stashed changes
   ]
 };
 
@@ -193,6 +189,7 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
               }
     }
@@ -210,7 +207,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -226,7 +225,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -242,7 +243,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -259,7 +262,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -275,7 +280,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -291,7 +298,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -307,7 +316,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -323,7 +334,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -339,7 +352,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -355,7 +370,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -371,7 +388,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -387,7 +406,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -403,7 +424,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -419,7 +442,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -435,7 +460,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -451,7 +478,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -467,7 +496,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -483,7 +514,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -499,7 +532,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -515,7 +550,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -531,7 +568,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -547,7 +586,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -563,7 +604,9 @@ map.on("load", function loadingData() {
         },
       paint:{"circle-radius":5,
              "circle-color":'green',
+
              "circle-opacity":opacity_circle
+
               }
     }
   );
@@ -582,12 +625,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -607,12 +652,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -632,12 +679,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point, so no need to set the "heatmap-weight"
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -657,12 +706,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -682,12 +733,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -707,12 +760,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -738,6 +793,7 @@ map.on("load", function loadingData() {
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -757,12 +813,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -782,12 +840,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -807,12 +867,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -832,12 +894,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -857,12 +921,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -882,12 +948,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -907,12 +975,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -932,12 +1002,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -957,12 +1029,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -982,12 +1056,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -1007,12 +1083,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -1032,12 +1110,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -1057,12 +1137,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -1082,12 +1164,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -1107,12 +1191,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -1132,12 +1218,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
@@ -1157,12 +1245,14 @@ map.on("load", function loadingData() {
       paint: {
         // we do not differentiate the weight of each point
   
+
         "heatmap-intensity": intensity_heatmap,
         'heatmap-color': colors,
         // Adjust the heatmap radius by zoom level
         "heatmap-radius": radius_heatmap,
         // Transition from heatmap to circle layer by zoom level
         "heatmap-opacity": opacity_heatmap
+
       },
     },
     "waterway-label"
