@@ -50,8 +50,13 @@ const radius_heatmap = {
 
 const intensity_heatmap = {
   stops:[
+<<<<<<< Updated upstream
     [11,1],
     [15,5]
+=======
+    [11,0.03],
+    [15,0.2]
+>>>>>>> Stashed changes
   ]
 };
 
