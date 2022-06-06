@@ -36,6 +36,39 @@ const colors = [
   'rgb(165,0,38)',
 ];
 
+const legend_color=[
+  'rgba(0,104,55,0)',
+  'rgb(26,152,80)',
+  'rgb(102,189,99)',
+  'rgb(166,217,106)',
+  'rgb(217,239,139)',
+  'rgb(254,224,139)',
+  'rgb(253,174,97)',
+  'rgb(244,109,67)',
+  'rgb(215,48,39)',
+  'rgb(165,0,38)',
+];
+
+const legend=document.getElementById('legend');
+legend.innerHTML="<b>Crime Heat Intensity</b><br>";
+
+
+
+const item = document.createElement('span');
+item.innerHTML=('Low');
+legend.appendChild(item);
+
+legend_color.forEach((c,i) => {
+  const item = document.createElement('span');
+  item.className='legend-key';
+  item.style.backgroundColor = c;
+  legend.appendChild(item);
+
+});
+
+const item_last = document.createElement('span');
+item_last.innerHTML=('High');
+legend.appendChild(item_last);
 
 const opacity_circle = {stops:[
   [14,0],
