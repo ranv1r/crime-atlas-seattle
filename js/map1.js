@@ -1296,6 +1296,31 @@ map.on("load", function loadingData() {
   );
 });
 
+// for loop to add popup box to each crime point
+for (var i=0; i<24; i++) {
+    lyr=i.toString()
+    lyr='crimes-circle-layer-'+lyr
+    map.on('click',lyr,(event) => {
+      new mapboxgl.Popup()
+      .setLngLat(event.features[0].geometry.coordinates)
+      .setHTML(`<strong>Crime Type:</strong> ${event.features[0].properties.offense_type}`)
+      .addTo(map);
+      
+    })
+
+};
+
+//create a function to convert 24 hr to 12 hr format
+function format_hour(hr) {
+  if (hr<12) {
+    am_pm='AM'} else{
+      am_pm='PM'
+    };
+  hr = ((hr + 11) % 12 + 1);
+  hr=hr.toString();
+  return hr+am_pm
+};
+
   map.on('idle',() => {
   document.getElementById('slider').addEventListener('input',(event) => {
 
@@ -1312,7 +1337,7 @@ map.on("load", function loadingData() {
                            map.setLayoutProperty(hmap_id, 'visibility', 'none');
                            map.setLayoutProperty(cmap_id,'visibility','none')}
                           }
-    document.getElementById('active-hour').innerText = hour;
+    document.getElementById('active-hour').innerText = format_hour(hour);
   })
 });
 
