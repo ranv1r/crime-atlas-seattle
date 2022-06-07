@@ -97,6 +97,7 @@ const intensity_heatmap = {
 };
 
 map.on("load", function loadingData() {
+
   for (const i of Array(24).keys()) {
     // Make the 4AM layer visible by default.
     const visibility = i == 4 ? "visible" : "none";

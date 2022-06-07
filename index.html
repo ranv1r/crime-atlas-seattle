@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <head>
-      <meta charset="utf-8" />
-      <title>Index</title>
-    </head>
-  </head>
 
-  <body>
-    <a href="https://ranv1r.github.io/crime-atlas-seattle/lineChart.html">Line Chart</a>
-    <a href="https://ranv1r.github.io/crime-atlas-seattle/donut1.html">Donut 1</a>
-    <a href="https://ranv1r.github.io/crime-atlas-seattle/donut2.html">Donut 2</a>
-    <a href="https://ranv1r.github.io/crime-atlas-seattle/map1.html">Heatmap</a>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Seattle Crime Atlas</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
+  <link rel="stylesheet" href="css/map1.css" />
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
+</head>
+
+<body>
+  <div id="map"></div>
+
+  <div id="dashboard-background">
+
+    <div id="time-of-day-filter">
+      <b>Hour: <label id="active-hour">4AM</label></b>
+      <input id="slider" class="row" type="range" min="0" max="23" step="1" value="4" />
+    </div>
+    <div id="donut-neighborhood-container">
+      <h2 id="donut-neighborhood-title">Neighborhood</h2>
+      <div id="donut-neighborhood"></div>
+    </div>
+    <div id="donut-offense-container">
+      <h2 id="donut-offense-title">Offense</h2>
+      <div id="donut-offense"></div>
+    </div>
+  </div>
+  <div class="map-overlay" id="legend"></div>
+
+  <script src="js/donut1.js"></script>
+  <script src="js/map1.js"></script>
+</body>
+
 </html>
