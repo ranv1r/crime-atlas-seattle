@@ -103,6 +103,7 @@ map.on("load", function loadingData() {
     map.addSource(`crimes_${i}`, {
       type: "geojson",
       data: `assets/crime${i}.geojson`,
+      buffer: 0
     });
 
     map.addLayer({
