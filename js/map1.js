@@ -161,10 +161,8 @@ map.on("idle", () => {
       map.setLayoutProperty(`crimes-circle-layer-${i}`, "visibility", v);
       map.setLayoutProperty(`crimes-heat-layer-${i}`, "visibility", v);
     }
-    const hour_12hrformat = format_hour(e.target.value);
     const date = new Date();
     date.setHours(e.target.value);
-
     document.getElementById("active-hour").innerText = date.toLocaleString('en-US', { hour: 'numeric', hour12: true });
   });
 });
