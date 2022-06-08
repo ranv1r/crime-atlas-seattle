@@ -1,7 +1,5 @@
 # Crime-Atlas-Seattle
 
-***
-
 **Contributors**
 
 Andrew Sang, Ranvir Chhina, Kiernan Lee, Ziyang Liu
