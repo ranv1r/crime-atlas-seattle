@@ -26,6 +26,7 @@ I don't know the words to use to explain what I wanted to see here.
 **Data Souces**
 
 https://data.seattle.gov/Public-Safety/SPD-Crime-Data-2008-Present/tazs-3rd5
+
 http://seattle.gov/police/information-and-data/mcpp-about 
 
 **Applied Libraries**
