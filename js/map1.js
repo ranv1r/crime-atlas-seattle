@@ -10,6 +10,17 @@ const map = new mapboxgl.Map({
   //  projection: "lambertConformalConic",
 });
 
+map.addControl(new mapboxgl.NavigationControl());
+
+const filterGroup = document.getElementById('filter-group');
+const types_of_crime = [
+  "DESTRUCTION/DAMAGE/VANDALISM OF PROPERTY",
+  "DRIVING UNDER THE INFLUENCE",
+  "LARCENY-THEFT",
+  "DRUG/NARCOTIC OFFENSES",
+  "ASSAULT OFFENSES"
+];
+
 const colors = [
   "interpolate",
   ["linear"],
@@ -141,23 +152,75 @@ map.on("load", function loadingData() {
       },
       "waterway-label"
     );
-  }
+  };
+
+// Add switcher for type of crimes
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = 'radio_crime_type'
+    input.id = 'radio_all';
+    input.checked = 'checked';
+    input.value = 'all';
+    filterGroup.appendChild(input);
+
+    const label = document.createElement('label');
+    label.setAttribute('for', 'radio_all');
+    label.textContent = "ALL";
+    filterGroup.appendChild(label);
+
+
+
+  for (crime_type of types_of_crime) {
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'radio_crime_type';
+      input.id = `radio_${crime_type}`;
+
+      input.value = crime_type;
+      filterGroup.appendChild(input);
+
+      const label = document.createElement('label');
+      label.setAttribute('for',`radio_${crime_type}`);
+      if (crime_type=="DESTRUCTION/DAMAGE/VANDALISM OF PROPERTY") {label.textContent = "DESTRUCTION/ DAMAGE/ VANDALISM OF PROPERTY"} else{
+      label.textContent = crime_type};
+      filterGroup.appendChild(label);
+    };
+
+ 
+
 });
 
-// Add popup to each crime
+// Add popup to each crime poi
 for (const i of Array(24).keys()) {
   map.on("click", `crimes-circle-layer-${i}`, (event) => {
     new mapboxgl.Popup()
       .setLngLat(event.features[0].geometry.coordinates)
       .setHTML(
-        `<strong>Crime Type:</strong> ${event.features[0].properties.offense_type}`
+        `<strong>Crime Type:</strong> ${event.features[0].properties.offense_type} <br> <strong>Precinct:</strong>${event.features[0].properties.mcpp}`
       )
       .addTo(map);
   });
 }
 
+document.getElementById("filter-group").addEventListener('change',(event) => {
+  h_ampm = document.getElementById('active-hour').innerText;
+  hrs=h_ampm.slice(0,-3);
+  ampm=h_ampm.slice(-2);
+  if (ampm=="AM") {if (hrs=="12") {h_24hr='0'} else {h_24hr=hrs}} else {if (hrs=="12") {h_24hr='12'} else {h_24hr=(12+Number(hrs)).toString()}}
+   
+  const tp=event.target.value;
+  if (tp=='all') {map.setFilter('crimes-circle-layer-'+h_24hr,null)};
+  for (crime_type of types_of_crime) {
+      if (tp==crime_type) {
+        map.setFilter(`crimes-circle-layer-${h_24hr}`,null);
+        map.setFilter(`crimes-circle-layer-${h_24hr}`,["==",'offense_type',crime_type]);
+      }
+    }
+})
+
 map.on("idle", () => {
   document.getElementById("slider").addEventListener("input", (e) => {
+    document.getElementById('radio_all').checked=true;
     for (const i of Array(24).keys()) {
       const v = i == e.target.value ? "visible" : "none";
       map.setLayoutProperty(`crimes-circle-layer-${i}`, "visibility", v);
@@ -166,5 +229,8 @@ map.on("idle", () => {
     const date = new Date();
     date.setHours(e.target.value);
     document.getElementById("active-hour").innerText = date.toLocaleString('en-US', { hour: 'numeric', hour12: true });
-  });
+
+  }); 
+
+
 });

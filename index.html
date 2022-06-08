@@ -4,12 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <title>Seattle Crime Atlas</title>
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -41,7 +37,7 @@
 
 <body>
   <header>
-    <div class="bg-dark collapse" id="navbarHeader" style="">
+    <div class="bg-dark collapse" id="navbarHeader">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-8 col-md-7 py-4">
@@ -56,26 +52,28 @@
           <div class="col-sm-4 offset-md-1 py-4">
             <h4 class="text-white">Contact</h4>
             <ul class="list-unstyled">
-              <li><a href="https://twitter.com/SeattlePD" class="text-white">Follow SPD Twitter</a></li>
+              <li><a href="https://data.seattle.gov/Public-Safety/SPD-Crime-Data-2008-Present/tazs-3rd5" class="text-white">Find the Data</a></li>
               <li><a href="https://spdblotter.seattle.gov/" class="text-white">SPD Blotter</a></li>
-              <li><a href="#" class="text-white">Email me</a></li>
+              <li><a href="mailto:123@example.com" class="text-white">Email me</a></li>
             </ul>
           </div>
         </div>
         <div class="navbar-expand-md navbar-dark bg-dark shadow-sm">
           <ul class="navbar-nav mr-auto">
-
             <li class="nav-item">
-              <a class="nav-link" href="https://seattle.gov/police">Seattle Police</a>
+              <a class="nav-link" href="https://twitter.com/SeattlePD" class="text-white">Follow SPD Twitter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://twitter.com/SeattlePD">Seattle PD Twitter</a>
+              <a class="nav-link" href="https://seattle.gov/police" target="_blank">Seattle Police</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://kingcounty.gov/depts/sheriff.aspx">King County Sheriff</a>
+              <a class="nav-link" href="https://twitter.com/SeattlePD" target="_blank">Seattle PD Twitter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://www.seattle.gov/police/need-help/online-reporting">Report a crime</a>
+              <a class="nav-link" href="https://kingcounty.gov/depts/sheriff.aspx" target="_blank">King County Sheriff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.seattle.gov/police/need-help/online-reporting" target="_blank">Report a crime</a>
             </li>
           </ul>
         </div>
@@ -97,11 +95,11 @@
   </header>
   <main>
   <div id="map"></div>
-
+  <div id="toggle_overlay"><p class="text-muted">Enlarge Map to Toggle</p><div id="filter-group" class="filter-group"></div></div>
   <div id="dashboard-background">
 
     <div id="time-of-day-filter">
-      <b>Hour: <label id="active-hour">4AM</label></b>
+      <b>Hour: <label id="active-hour">4 AM</label></b>
       <input id="slider" class="row" type="range" min="0" max="23" step="1" value="4" />
     </div>
     <div id="donut-neighborhood-container">
