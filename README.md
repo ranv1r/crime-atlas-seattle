@@ -45,4 +45,4 @@ We pulled our data from the [Seattle Open Data portal](https://data.seattle.gov/
 We would like to acknowledge the contributions that our teaching team have implemented for us to be able to have the framework and knowledge to be able to build this project, and the developers of all the other technologies of which we have dependencies. 
 
 [license-badge]: https://img.shields.io/github/license/ajeetdsouza/zoxide?color=lightgray&style=flat-square
-[license]: https://github.com/ajeetdsouza/zoxide/blob/main/LICENSE
+[license]: ./LICENSE.md
