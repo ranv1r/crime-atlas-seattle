@@ -360,6 +360,6 @@ map.on("idle", () => {
     );
   });
   document.getElementById("enlarge-text").addEventListener("click", (e) => {
-    map.setZoom(14.5)
+    map.setZoom(16)
   })
 });
