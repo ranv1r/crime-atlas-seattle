@@ -187,8 +187,8 @@ p {
     padding: 0px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
-    align-items: stretch;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #donut-neighborhood-container {
