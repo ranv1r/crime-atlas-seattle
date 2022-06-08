@@ -15,7 +15,7 @@ This project is a heatmap of crime around the city of Seattle. The project is ba
 ---
 
 
-**Project Goal**
+**Background**
 
 The city of Seattle maintains an open data portal “…for the purpose of increasing the quality of life…increasing transparency, accountability and comparability.” Within this data portal, the Seattle Police Department (SPD) frequently updates records of reported crimes, including information such as the type and location of the crimes. Using this data, we created a heat map of crime across the city.
 
