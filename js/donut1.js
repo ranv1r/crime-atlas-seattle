@@ -39,7 +39,7 @@ function construct(json) {
     width = 335 - margin.left - margin.right,
     height = 235 - margin.top - margin.bottom,
     innerRadius = 50,
-    outerRadius = width * 0.3; // the outerRadius goes from the middle of the SVG area to the border
+    outerRadius = width * 0.5; // the outerRadius goes from the middle of the SVG area to the border
 
   // append the svg object
   var svg = d3
@@ -79,6 +79,8 @@ function construct(json) {
     .domain([0, 5500]); // Domain of Y is from 0 to the max seen in the data
 
   // Add the bars
+  const filterInput = document.getElementById('filter-input');
+  const filterInputfly = document.getElementById('filter-input-fly');
   svg
     .append("g")
     .selectAll("path")
@@ -106,16 +108,24 @@ function construct(json) {
         .padAngle(0.01)
         .padRadius(innerRadius)
     )
+    .on("click", function (d, i) {
+      filterInputfly.value = d[0];
+      filterInputfly.dispatchEvent(new Event("input"))
+    })
     .on("mouseover", function (d, i) {
+      filterInput.value = d[0];
+      filterInput.dispatchEvent(new Event("input"))
       d3.select(this).transition().duration("50").attr("opacity", ".85").style("cursor", "pointer");
       Tooltip.style("opacity", 1);
     })
     .on("mousemove", function (d, i) {
-      Tooltip.html(`<span id="donut-neighborhood-tooltip-text">${d[0].split("/")[0]}</span>`)
+      Tooltip.html(`<span id="donut-neighborhood-tooltip-text">${d[0]}</span>`)
         .style("left", d3.mouse(this)[0] + "px")
         .style("top", d3.mouse(this)[1]-180 + "px");
     })
     .on("mouseout", function (d, i) {
+      filterInput.value = "";
+      filterInput.dispatchEvent(new Event("input"))
       d3.select(this).transition().duration("50").attr("opacity", "1");
       Tooltip.style("opacity", 0);
     });
@@ -156,6 +166,6 @@ function construct(json) {
   //   .attr("alignment-baseline", "middle");
 }
 readJson(document.getElementById("slider").value, construct);
-document.getElementById("slider").addEventListener("input", (e) => {
+document.getElementById("slider").addEventListener("mouseup", (e) => {
   readJson(e.target.value, construct);
 });

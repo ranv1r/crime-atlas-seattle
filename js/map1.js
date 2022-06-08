@@ -4,7 +4,7 @@ mapboxgl.accessToken =
 const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/streets-v10",
-  zoom: 11,
+  zoom: 10.5,
   center: [-122.33278737553199, 47.60548243054508],
   //  parallels: [47.5, 48.7333], // Source: https://kingcounty.gov/services/gis/GISData/DataStandards.aspx
   //  projection: "lambertConformalConic",
@@ -108,6 +108,131 @@ const intensity_heatmap = {
 };
 
 map.on("load", function loadingData() {
+  const mcpp = {
+    "ALASKA JUNCTION": 321,
+    ALKI: 322,
+    "BALLARD NORTH": 323,
+    "BALLARD SOUTH": 324,
+    BELLTOWN: 325,
+    BITTERLAKE: 326,
+    "BRIGHTON/DUNLAP": 327,
+    "CENTRAL AREA/SQUIRE PARK": 328,
+    "CLAREMONT/RAINIER VISTA": 329,
+    "COLUMBIA CITY": 330,
+    "EASTLAKE - EAST": 331,
+    "EASTLAKE - WEST": 332,
+    "COMMERCIAL DUWAMISH": 333,
+    "COMMERCIAL HARBOR ISLAND": 334,
+    "DOWNTOWN COMMERCIAL": 335,
+    "HILLMAN CITY": 336,
+    "FAUNTLEROY SW": 337,
+    "FIRST HILL": 338,
+    FREMONT: 339,
+    GENESEE: 340,
+    "HIGH POINT": 341,
+    MORGAN: 342,
+    GEORGETOWN: 343,
+    GREENWOOD: 344,
+    "HIGHLAND PARK": 345,
+    LAKECITY: 346,
+    "LAKEWOOD/SEWARD PARK": 347,
+    "MOUNT BAKER": 348,
+    "MADISON PARK": 349,
+    MAGNOLIA: 350,
+    "MONTLAKE/PORTAGE BAY": 351,
+    "MID BEACON HILL": 352,
+    "MILLER PARK": 353,
+    "NEW HOLLY": 354,
+    "NORTH ADMIRAL": 355,
+    "QUEEN ANNE": 356,
+    "NORTH BEACON HILL": 357,
+    "RAINIER BEACH": 358,
+    "NORTH DELRIDGE": 359,
+    UNIVERSITY: 360,
+    NORTHGATE: 361,
+    SODO: 362,
+    "PHINNEY RIDGE": 363,
+    "PIGEON POINT": 364,
+    "PIONEER SQUARE": 365,
+    "RAINIER VIEW": 366,
+    "ROOSEVELT/RAVENNA": 367,
+    "ROXHILL/WESTWOOD/ARBOR HEIGHTS": 368,
+    SANDPOINT: 369,
+    "SLU/CASCADE": 370,
+    "SOUTH BEACON HILL": 371,
+    "SOUTH PARK": 372,
+    WALLINGFORD: 373,
+    "SOUTH DELRIDGE": 374,
+    "CAPITOL HILL": 375,
+    "LESCHI/MADRONA": 376,
+    "JUDKINS PARK/NORTH BEACON HILL": 377,
+    "INTERNATIONAL DISTRICT": 378,
+  };
+  map.addSource(`mcpp`, {
+    type: "geojson",
+    data: `assets/mcpp.geojson`,
+  });
+
+  for (const [m, i] of Object.entries(mcpp)) {
+    // Add a layer for this symbol type if it hasn't been added already.
+    map.addLayer({
+      id: `mcpp-${i}`,
+      type: "fill",
+      source: "mcpp", // reference the data source
+      layout: { visibility: "none" },
+      paint: {
+        "fill-color": `#07BBBB`, // blue color fill
+        "fill-opacity": 0.5,
+      },
+      filter: ["==", "NEIGHBORHOOD", m],
+    });
+
+    map.addLayer({
+      id: `mcpp-${i}-outline`,
+      type: "line",
+      source: "mcpp",
+      layout: { visibility: "none" },
+      paint: {
+        "line-color": "#000",
+        "line-width": 3,
+      },
+      filter: ["==", "NEIGHBORHOOD", m],
+    });
+  }
+  const filterInput = document.getElementById("filter-input");
+  const filterInputFly = document.getElementById("filter-input-fly");
+  filterInput.addEventListener("input", (e) => {
+    // If the input value matches a layerID set
+    // it's visibility to 'visible' or else hide it.
+    for (const [m, i] of Object.entries(mcpp)) {
+      map.setLayoutProperty(
+        `mcpp-${i}`,
+        "visibility",
+        e.target.value == m ? "visible" : "none"
+      );
+
+      map.setLayoutProperty(
+        `mcpp-${i}-outline`,
+        "visibility",
+        e.target.value == m ? "visible" : "none"
+      );
+    }
+  });
+
+  filterInputFly.addEventListener("input", (e) => {
+    // If the input value matches a layerID set
+    // it's visibility to 'visible' or else hide it.
+    a = map.querySourceFeatures('mcpp', {
+      sourceLayer: `mcpp-${mcpp[e.target.value]}`,
+      filter: ["==", "NEIGHBORHOOD", e.target.value]
+    });
+    console.log(a[0].geometry.coordinates[0][0])
+    map.flyTo({
+      center: a[0].geometry.coordinates[0][0],
+      zoom: 12,
+      essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    });
+  });
 
   for (const i of Array(24).keys()) {
     // Make the 4AM layer visible by default.
@@ -115,7 +240,7 @@ map.on("load", function loadingData() {
     map.addSource(`crimes_${i}`, {
       type: "geojson",
       data: `assets/crime${i}.geojson`,
-      buffer: 0
+      buffer: 0,
     });
 
     map.addLayer({
@@ -219,7 +344,7 @@ document.getElementById("filter-group").addEventListener('change',(event) => {
 })
 
 map.on("idle", () => {
-  document.getElementById("slider").addEventListener("input", (e) => {
+  document.getElementById("slider").addEventListener("mouseup", (e) => {
     document.getElementById('radio_all').checked=true;
     for (const i of Array(24).keys()) {
       const v = i == e.target.value ? "visible" : "none";
@@ -228,9 +353,9 @@ map.on("idle", () => {
     }
     const date = new Date();
     date.setHours(e.target.value);
-    document.getElementById("active-hour").innerText = date.toLocaleString('en-US', { hour: 'numeric', hour12: true });
-
-  }); 
-
-
+    document.getElementById("active-hour").innerText = date.toLocaleString(
+      "en-US",
+      { hour: "numeric", hour12: true }
+    );
+  });
 });
