@@ -107,6 +107,13 @@ const intensity_heatmap = {
   ],
 };
 
+const intensity_heatmap_filtered = {
+  stops: [
+    [11, 0.06],
+    [15, 0.3],
+  ],
+};
+
 map.on("load", function loadingData() {
   const mcpp = {
     "ALASKA JUNCTION": 321,
@@ -277,6 +284,29 @@ map.on("load", function loadingData() {
       },
       "waterway-label"
     );
+
+    for (crime_type of types_of_crime) {
+      map.addLayer(
+        {
+          id: `crimes-heat-layer-${i}-${crime_type}`,
+          type: "heatmap",
+        source: `crimes_${i}`,
+        layout: {
+          visibility: "none",
+        },
+        minzoom: 10,
+        maxzoom: 15,
+        paint: {
+          "heatmap-intensity": intensity_heatmap_filtered,
+          "heatmap-color": colors,
+          "heatmap-radius": radius_heatmap,
+          "heatmap-opacity": opacity_heatmap,
+        },
+        filter: ["==", "offense_type", crime_type],
+      },
+      "waterway-label"
+      )
+    }
   };
 
 // Add switcher for type of crimes
@@ -334,22 +364,41 @@ document.getElementById("filter-group").addEventListener('change',(event) => {
   if (ampm=="AM") {if (hrs=="12") {h_24hr='0'} else {h_24hr=hrs}} else {if (hrs=="12") {h_24hr='12'} else {h_24hr=(12+Number(hrs)).toString()}}
    
   const tp=event.target.value;
-  if (tp=='all') {map.setFilter('crimes-circle-layer-'+h_24hr,null)};
+  if (tp=='all') {
+    map.setFilter('crimes-circle-layer-'+h_24hr,null)
+    map.setLayoutProperty(`crimes-heat-layer-${h_24hr}`,"visibility","visible")
+    for (crime_type of types_of_crime) {
+      map.setLayoutProperty(`crimes-heat-layer-${h_24hr}-${crime_type}`,"visibility","none")
+    }
+} else { //if tp!='all'
+  map.setLayoutProperty(`crimes-heat-layer-${h_24hr}`,"visibility","none")
   for (crime_type of types_of_crime) {
+    if (tp != crime_type) {
+      map.setLayoutProperty(`crimes-heat-layer-${h_24hr}-${crime_type}`,"visibility","none")
+    }
       if (tp==crime_type) {
         map.setFilter(`crimes-circle-layer-${h_24hr}`,null);
         map.setFilter(`crimes-circle-layer-${h_24hr}`,["==",'offense_type',crime_type]);
+
+        map.setLayoutProperty(`crimes-heat-layer-${h_24hr}-${crime_type}`,"visibility","visible")
       }
     }
-})
+
+   
+};})
 
 map.on("idle", () => {
   document.getElementById("slider").addEventListener("mouseup", (e) => {
+    //set the toggle to show all crimes
     document.getElementById('radio_all').checked=true;
     for (const i of Array(24).keys()) {
       const v = i == e.target.value ? "visible" : "none";
       map.setLayoutProperty(`crimes-circle-layer-${i}`, "visibility", v);
       map.setLayoutProperty(`crimes-heat-layer-${i}`, "visibility", v);
+      //all heatmap at specific crime level should be set to non-visible
+      for (crime_type of types_of_crime){
+        map.setLayoutProperty(`crimes-heat-layer-${i}-${crime_type}`, "visibility", "none");
+      }
     }
     const date = new Date();
     date.setHours(e.target.value);
