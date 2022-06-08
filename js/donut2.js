@@ -73,7 +73,7 @@ function construct(json) {
   };
 
   const ctx = document.getElementById("myChart").getContext("2d");
-  // myChart.clear()
+  
   myChart = new Chart(ctx, {
     type: "doughnut",
     data: data,
