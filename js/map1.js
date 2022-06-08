@@ -344,13 +344,13 @@ document.getElementById("filter-group").addEventListener('change',(event) => {
 })
 
 map.on("idle", () => {
-  document.getElementById('radio_all').checked=true;
-  for (const i of Array(24).keys()) {
-    const v = i == e.target.value ? "visible" : "none";
-    map.setLayoutProperty(`crimes-circle-layer-${i}`, "visibility", v);
-    map.setLayoutProperty(`crimes-heat-layer-${i}`, "visibility", v);
-  }
   document.getElementById("slider").addEventListener("mouseup", (e) => {
+    document.getElementById('radio_all').checked=true;
+    for (const i of Array(24).keys()) {
+      const v = i == e.target.value ? "visible" : "none";
+      map.setLayoutProperty(`crimes-circle-layer-${i}`, "visibility", v);
+      map.setLayoutProperty(`crimes-heat-layer-${i}`, "visibility", v);
+    }
     const date = new Date();
     date.setHours(e.target.value);
     document.getElementById("active-hour").innerText = date.toLocaleString(
