@@ -274,7 +274,7 @@ map.on("load", function loadingData() {
           visibility: visibility,
         },
         minzoom: 10,
-        maxzoom: 14.5,
+        maxzoom: 15,
         paint: {
           "heatmap-intensity": intensity_heatmap,
           "heatmap-color": colors,
@@ -309,40 +309,39 @@ map.on("load", function loadingData() {
     }
   };
 
-  // Add switcher for type of crimes
-  const input = document.createElement('input');
-  input.type = 'radio';
-  input.name = 'radio_crime_type'
-  input.id = 'radio_all';
-  input.checked = 'checked';
-  input.value = 'all';
-  filterGroup.appendChild(input);
+// Add switcher for type of crimes
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = 'radio_crime_type'
+    input.id = 'radio_all';
+    input.checked = 'checked';
+    input.value = 'all';
+    filterGroup.appendChild(input);
 
-  const label = document.createElement('label');
-  label.setAttribute('for', 'radio_all');
-  label.textContent = "ALL";
-  filterGroup.appendChild(label);
+    const label = document.createElement('label');
+    label.setAttribute('for', 'radio_all');
+    label.textContent = "ALL";
+    filterGroup.appendChild(label);
 
 
 
   for (crime_type of types_of_crime) {
-    const input = document.createElement('input');
-    input.type = 'radio';
-    input.name = 'radio_crime_type';
-    input.id = `radio_${crime_type}`;
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'radio_crime_type';
+      input.id = `radio_${crime_type}`;
 
-    input.value = crime_type;
-    filterGroup.appendChild(input);
+      input.value = crime_type;
+      filterGroup.appendChild(input);
 
-    const label = document.createElement('label');
-    label.setAttribute('for', `radio_${crime_type}`);
-    if (crime_type == "DESTRUCTION/DAMAGE/VANDALISM OF PROPERTY") { label.textContent = "DESTRUCTION/ DAMAGE/ VANDALISM OF PROPERTY" } else {
-      label.textContent = crime_type
+      const label = document.createElement('label');
+      label.setAttribute('for',`radio_${crime_type}`);
+      if (crime_type=="DESTRUCTION/DAMAGE/VANDALISM OF PROPERTY") {label.textContent = "DESTRUCTION/ DAMAGE/ VANDALISM OF PROPERTY"} else{
+      label.textContent = crime_type};
+      filterGroup.appendChild(label);
     };
-    filterGroup.appendChild(label);
-  };
 
-
+ 
 
 });
 
@@ -358,25 +357,40 @@ for (const i of Array(24).keys()) {
   });
 }
 
-document.getElementById("filter-group").addEventListener('change', (event) => {
+document.getElementById("filter-group").addEventListener('change',(event) => {
   h_ampm = document.getElementById('active-hour').innerText;
-  hrs = h_ampm.slice(0, -3);
-  ampm = h_ampm.slice(-2);
-  if (ampm == "AM") { if (hrs == "12") { h_24hr = '0' } else { h_24hr = hrs } } else { if (hrs == "12") { h_24hr = '12' } else { h_24hr = (12 + Number(hrs)).toString() } }
-
-  const tp = event.target.value;
-  if (tp == 'all') { map.setFilter('crimes-circle-layer-' + h_24hr, null) };
-  for (crime_type of types_of_crime) {
-    if (tp == crime_type) {
-      map.setFilter(`crimes-circle-layer-${h_24hr}`, null);
-      map.setFilter(`crimes-circle-layer-${h_24hr}`, ["==", 'offense_type', crime_type]);
+  hrs=h_ampm.slice(0,-3);
+  ampm=h_ampm.slice(-2);
+  if (ampm=="AM") {if (hrs=="12") {h_24hr='0'} else {h_24hr=hrs}} else {if (hrs=="12") {h_24hr='12'} else {h_24hr=(12+Number(hrs)).toString()}}
+   
+  const tp=event.target.value;
+  if (tp=='all') {
+    map.setFilter('crimes-circle-layer-'+h_24hr,null)
+    map.setLayoutProperty(`crimes-heat-layer-${h_24hr}`,"visibility","visible")
+    for (crime_type of types_of_crime) {
+      map.setLayoutProperty(`crimes-heat-layer-${h_24hr}-${crime_type}`,"visibility","none")
     }
-  }
-})
+} else { //if tp!='all'
+  map.setLayoutProperty(`crimes-heat-layer-${h_24hr}`,"visibility","none")
+  for (crime_type of types_of_crime) {
+    if (tp != crime_type) {
+      map.setLayoutProperty(`crimes-heat-layer-${h_24hr}-${crime_type}`,"visibility","none")
+    }
+      if (tp==crime_type) {
+        map.setFilter(`crimes-circle-layer-${h_24hr}`,null);
+        map.setFilter(`crimes-circle-layer-${h_24hr}`,["==",'offense_type',crime_type]);
+
+        map.setLayoutProperty(`crimes-heat-layer-${h_24hr}-${crime_type}`,"visibility","visible")
+      }
+    }
+
+   
+};})
 
 map.on("idle", () => {
   document.getElementById("slider").addEventListener("mouseup", (e) => {
-    document.getElementById('radio_all').checked = true;
+    //set the toggle to show all crimes
+    document.getElementById('radio_all').checked=true;
     for (const i of Array(24).keys()) {
       const v = i == e.target.value ? "visible" : "none";
       map.setLayoutProperty(`crimes-circle-layer-${i}`, "visibility", v);
@@ -393,7 +407,4 @@ map.on("idle", () => {
       { hour: "numeric", hour12: true }
     );
   });
-  document.getElementById("enlarge-text").addEventListener("click", (e) => {
-    map.setZoom(16)
-  })
 });
