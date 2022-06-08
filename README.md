@@ -1,5 +1,7 @@
 # Crime-Atlas-Seattle
 
+https://github.com/ranv1r/crime-atlas-seattle
+
 **Contributors**
 
 Andrew Sang, Ranvir Chhina, Kiernan Lee, Ziyang Liu
