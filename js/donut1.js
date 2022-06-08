@@ -18,7 +18,13 @@ function construct(json) {
   d3.select("#donut-neighborhood > svg").remove();
   // Remove old tooltip div
   d3.select("#donut-neighborhood > div").remove();
-
+  colorScale1 = d3.scaleSequential()
+    .domain([0, 29])
+    .interpolator(d3.interpolate("rgb(165,0,38)", "rgb(254,224,139)"))
+  colorScale2 = d3.scaleSequential()
+    .domain([29, 58])
+    .interpolator(d3.interpolate("rgb(254,224,139)", "rgb(26,152,80)"))
+  colorScale = (d) => { return d > 29 ? colorScale2(d) : colorScale1(d) }
   neighborhoods = {};
   for (f of json.features) {
     mcpp = f.properties.mcpp;
@@ -51,10 +57,10 @@ function construct(json) {
     .attr(
       "transform",
       "translate(" +
-        (width / 2 + margin.left) +
-        "," +
-        ((height / 2 + margin.top)-30) +
-        ")"
+      (width / 2 + margin.left) +
+      "," +
+      ((height / 2 + margin.top) - 30) +
+      ")"
     );
 
   // Tooltip
@@ -87,7 +93,10 @@ function construct(json) {
     .data(items)
     .enter()
     .append("path")
-    .attr("fill", "#07BBBB")
+    .attr("fill", function (d, i) {
+      console.log(colorScale)
+      return colorScale(i);
+    })
     .attr("id", function (d, i) {
       return `${d[0]}-path`;
     })
@@ -121,7 +130,7 @@ function construct(json) {
     .on("mousemove", function (d, i) {
       Tooltip.html(`<span id="donut-neighborhood-tooltip-text">${d[0]}</span>`)
         .style("left", d3.mouse(this)[0] + "px")
-        .style("top", d3.mouse(this)[1]-180 + "px");
+        .style("top", d3.mouse(this)[1] - 180 + "px");
     })
     .on("mouseout", function (d, i) {
       filterInput.value = "";

@@ -61,10 +61,11 @@ const legend_color = [
 ];
 
 const legend = document.getElementById("legend");
-legend.innerHTML = "<b>Crime Heat Intensity</b><br>";
+legend.innerHTML = `<b id="legend-title-text">Crime Heat Intensity</b><br>`;
 
 const item = document.createElement("span");
 item.innerHTML = "Low";
+item.setAttribute("id", "legend-key-text")
 legend.appendChild(item);
 
 legend_color.forEach((c, i) => {
@@ -76,6 +77,7 @@ legend_color.forEach((c, i) => {
 
 const item_last = document.createElement("span");
 item_last.innerHTML = "High";
+item.setAttribute("id", "legend-key-text")
 legend.appendChild(item_last);
 
 const opacity_circle = {
@@ -188,7 +190,7 @@ map.on("load", function loadingData() {
       source: "mcpp", // reference the data source
       layout: { visibility: "none" },
       paint: {
-        "fill-color": `#07BBBB`, // blue color fill
+        "fill-color": `#808080`, // blue color fill
         "fill-opacity": 0.5,
       },
       filter: ["==", "NEIGHBORHOOD", m],
@@ -295,7 +297,7 @@ map.on("load", function loadingData() {
           visibility: "none",
         },
         minzoom: 10,
-        maxzoom: 15,
+        maxzoom: 14.5,
         paint: {
           "heatmap-intensity": intensity_heatmap_filtered,
           "heatmap-color": colors,
@@ -407,4 +409,7 @@ map.on("idle", () => {
       { hour: "numeric", hour12: true }
     );
   });
+  document.getElementById("enlarge-text").addEventListener("click", (e) => {
+    map.setZoom(16)
+  })
 });

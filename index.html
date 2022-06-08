@@ -96,7 +96,7 @@
     <div id="map"></div>
 
     <div id="toggle_overlay">
-      <p class="text-muted">Enlarge Map to Toggle</p>
+      <span class="text-muted" id="enlarge-text">Zoom to see individual crimes</span>
       <div id="filter-group" class="filter-group"></div>
     </div>
     <div id="dashboard-background">
@@ -104,11 +104,12 @@
       <input id="filter-input" type="hidden" name="filter" placeholder="Filter by name">
       <input id="filter-input-fly" type="hidden" name="filter" placeholder="Filter by name">
       <div id="time-of-day-filter">
-        <b>Hour: <label id="active-hour">4 AM</label></b>
+        <h2>Hour: <label id="active-hour">4 AM</label></h2>
         <input id="slider" class="row" type="range" min="0" max="23" step="1" value="4" />
       </div>
       <div id="donut-neighborhood-container">
         <h2 id="donut-neighborhood-title">Neighborhood</h2>
+        <p>(Hover/Click over me!)</p>
         <div id="donut-neighborhood"></div>
       </div>
       <div id="donut-offense-container">

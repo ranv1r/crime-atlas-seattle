@@ -27,6 +27,7 @@ function construct(json) {
     offense_type = f.properties.offense_type;
     offenses[offense_type] = offenses[offense_type] + 1 || 1;
   }
+  
 
   // Create items array
   var items = Object.keys(offenses).map(function (key) {
@@ -59,7 +60,12 @@ function construct(json) {
           return i[1];
         }),
         backgroundColor: [
-          "#bb8107"
+          "rgb(165,0,38)",
+          "rgb(244,109,67)",
+          "rgb(254,224,139)",
+          "rgb(166,217,106)",
+          "rgb(102,189,99)",
+          "rgb(26,152,80)",
         ],
         hoverOffset: 4,
       },
