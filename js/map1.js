@@ -192,7 +192,6 @@ map.on("load", function loadingData() {
   filterInput.addEventListener("input", (e) => {
     // If the input value matches a layerID set
     // it's visibility to 'visible' or else hide it.
-    console.log(e.target.value);
     for (const [m, i] of Object.entries(mcpp)) {
       map.setLayoutProperty(
         `mcpp-${i}`,
@@ -267,7 +266,7 @@ for (const i of Array(24).keys()) {
 }
 
 map.on("idle", () => {
-  document.getElementById("slider").addEventListener("input", (e) => {
+  document.getElementById("slider").addEventListener("mouseup", (e) => {
     for (const i of Array(24).keys()) {
       const v = i == e.target.value ? "visible" : "none";
       map.setLayoutProperty(`crimes-circle-layer-${i}`, "visibility", v);

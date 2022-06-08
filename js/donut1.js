@@ -161,6 +161,6 @@ function construct(json) {
   //   .attr("alignment-baseline", "middle");
 }
 readJson(document.getElementById("slider").value, construct);
-document.getElementById("slider").addEventListener("input", (e) => {
+document.getElementById("slider").addEventListener("mouseup", (e) => {
   readJson(e.target.value, construct);
 });
