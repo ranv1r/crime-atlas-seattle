@@ -2,10 +2,12 @@
 
 # Seattle Crime Atlas [![License][license-badge]][license]
 https://ranv1r.github.io/crime-atlas-seattle/  
+</div>
 
 > A map showing the crime distribution in Seattle from 2008-present
 
-A project by Ranvir, Ziyang, Kiernan, and Andrew
+<div align="right">
+A project by <b>Ranvir, Ziyang, Kiernan, and Andrew</b>
 </div>
 
 
@@ -13,6 +15,7 @@ A project by Ranvir, Ziyang, Kiernan, and Andrew
 <div align="center">
 Figure 1. An overview of the project showing the heatmap across the city at a selected time.
 </div>
+
 ## Summary
 This project is a heatmap of crime around the city of Seattle. The project is based on public data from the Seattle Police Department that the city publicly offers.
 
