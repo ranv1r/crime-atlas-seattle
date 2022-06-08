@@ -189,6 +189,7 @@ map.on("load", function loadingData() {
     });
   }
   const filterInput = document.getElementById("filter-input");
+  const filterInputFly = document.getElementById("filter-input-fly");
   filterInput.addEventListener("input", (e) => {
     // If the input value matches a layerID set
     // it's visibility to 'visible' or else hide it.
@@ -205,6 +206,21 @@ map.on("load", function loadingData() {
         e.target.value == m ? "visible" : "none"
       );
     }
+  });
+
+  filterInputFly.addEventListener("input", (e) => {
+    // If the input value matches a layerID set
+    // it's visibility to 'visible' or else hide it.
+    a = map.querySourceFeatures('mcpp', {
+      sourceLayer: `mcpp-${mcpp[e.target.value]}`,
+      filter: ["==", "NEIGHBORHOOD", e.target.value]
+    });
+    console.log(a[0].geometry.coordinates[0][0])
+    map.flyTo({
+      center: a[0].geometry.coordinates[0][0],
+      zoom: 12,
+      essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    });
   });
 
   for (const i of Array(24).keys()) {

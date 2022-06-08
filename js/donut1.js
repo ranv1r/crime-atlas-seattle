@@ -80,6 +80,7 @@ function construct(json) {
 
   // Add the bars
   const filterInput = document.getElementById('filter-input');
+  const filterInputfly = document.getElementById('filter-input-fly');
   svg
     .append("g")
     .selectAll("path")
@@ -107,6 +108,10 @@ function construct(json) {
         .padAngle(0.01)
         .padRadius(innerRadius)
     )
+    .on("click", function (d, i) {
+      filterInputfly.value = d[0];
+      filterInputfly.dispatchEvent(new Event("input"))
+    })
     .on("mouseover", function (d, i) {
       filterInput.value = d[0];
       filterInput.dispatchEvent(new Event("input"))
