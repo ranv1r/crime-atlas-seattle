@@ -34,8 +34,11 @@ With our project, we aim to present data on common crimes in the city of Seattle
 
 ## Features
 The Map, which can be navigated using controls in the top-right, or with standard click-and-drag controls.
+
 Graphs, located on the left side, which visualize a breakdown of crimes by type and by neighborhood, depending on a user-selected time. Mousing over these graphs will reveal additional information, including the type of crime, the neighborhood it was commited in, and a highligted boundard of the neighborhood.
+
 Filters, located on the right side of the screen, which can be toggled to show or hide types of crimes.
+
 Menu, located on the top-right. Interacting with this will display an about section, a short explination of how to use the controls, as well as link to the data sources used in the map.
 
 ## Process Breakdown
