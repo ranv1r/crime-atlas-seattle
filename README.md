@@ -9,7 +9,7 @@ A map showing the crime distribution in Seattle from 2008-present
 </div>
   
 <div align="center">
-A project by <b>Ranvir, Ziyang, Kiernan, and Andrew</b>
+A project by <b>Ranvir, Ziyang, Kiernan, and Andrew (AD3)</b>
 </div>
 
 
