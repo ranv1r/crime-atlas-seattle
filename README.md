@@ -39,7 +39,7 @@ Graphs, located on the left side, which visualize a breakdown of crimes by type 
 
 Filters, located on the right side of the screen, which can be toggled to show or hide types of crimes.
 
-Menu, located on the top-right. Interacting with this will display an about section, a short explination of how to use the controls, as well as link to the data sources used in the map.
+Menu, located on the top-right. Interacting with this will display an "about" section, a short explination of how to use the controls, as well as link to the data sources used in the map.
 
 ## Process Breakdown
 Our project was built iteratively, first by building a mockup in Figma. Here, we decided on features and their use in the final map. Next, we built out each individual component of the dashboard, generally completing a feature before moving on to keep from expanding the scope of the project too far, and worked to implement each part into the overall project. 
