@@ -55,7 +55,7 @@ Our project uses [D3.js](d3js), [Mapbox.GL](https://docs.mapbox.com/mapbox-gl-js
 We pulled our data from the [Seattle Open Data portal](https://data.seattle.gov/Public-Safety/SPD-Crime-Data-2008-Present/tazs-3rd5) which features entries about crimes since 2008, along with any details relevant to those crimes. More info on MCPP, the Seattle Police Department's neighborhood classification system, can be found [here](http://seattle.gov/police/information-and-data/mcpp-about).
 
 ### Challenges and Limitations
-One limit that we ran into very quickly was the size of the file. We simply could not render every single entry of the entire dataset. We induced a limitation to reduce the amount of data available at any time. Additionally, given the size of the data, we were not able to actively update the site with new data as it arrives in the dataset. 
+One limit that we ran into very quickly was the size of the file. We simply could not render every single entry of the entire dataset. We induced a limitation to reduce the amount of data available at any time. Additionally, given the size of the data, we were not able to actively update the site with new data as it arrives in the dataset. We also struggled with effective workflow via Git, implementing a flyover feature, and map layer filtration via Mapbox GL
 
 ### Acknowledgements
 We would like to acknowledge the contributions that our teaching team have implemented for us to be able to have the framework and knowledge to be able to build this project, and the developers of all the other technologies of which we have dependencies. 
