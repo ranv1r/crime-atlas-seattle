@@ -5,7 +5,7 @@ https://ranv1r.github.io/crime-atlas-seattle/
 </div>
 
 <div align="left">
-> A map showing the crime distribution in Seattle from 2008-present
+A map showing the crime distribution in Seattle from 2008-present
 </div>
   
 <div align="right">
